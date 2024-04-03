@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="./script.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+<header>
+  <h1>White Board</h1>
+</header>
+<canvas id="canvas"></canvas>
+<div class="control">
+  <div class="button">
+    <div>
+      <input type="radio" name="pen-type" id="pen" value="pen" checked>
+      <label for="pen">Pen
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-brush"
+             viewBox="0 0 16 16">
+          <path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04zM4.705 11.912a1.23 1.23 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.39 3.39 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3.122 3.122 0 0 0 .126-.75l-.793-.792zm1.44.026c.12-.04.277-.1.458-.183a5.068 5.068 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005a.031.031 0 0 1-.007.004zm3.582-3.043.002.001h-.002z"/>
+        </svg>
+        <i class="fa fa-paint-brush"></i>
+      </label>
+    </div>
+
+    <div>
+      <input type="radio" name="pen-type" id="pencil" value="pencil">
+      <label for="pencil">Pencil
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill"
+             viewBox="0 0 16 16">
+          <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+        </svg>
+        <i class="bi bi-pencil-fill"></i>
+      </label>
+    </div>
+    <div>
+      <input type="radio" name="pen-type" id="eraser" value="eraser">
+      <label for="eraser">Eraser
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eraser-fill"
+             viewBox="0 0 16 16">
+          <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+        </svg>
+        <i class="fa fa-eraser"></i>
+      </label>
+    </div>
+  </div>
+
+  <div class="size">
+    <label for="pen-size">Pen Size</label>
+    <input type="range" id="pen-size" min="1" max="50" size="30px">
+  </div>
+  <div class="size">
+    <label for="eraser-size">Eraser Size</label>
+    <input type="range" id="eraser-size" min="1" max="50" size="30px">
+  </div>
+
+  <section class="col">
+    <details open>
+      <summary>Color_Box</summary>
+      <div class="color-field" style="background-color: black;"></div>
+      <div class="color-field" style="background-color: red;"></div>
+      <div class="color-field" style="background-color:blue;"></div>
+      <div class="color-field" style="background-color: green;"></div>
+      <div class="color-field" style="background-color: yellow;"></div>
+    </details>
+  </section>
+
+  <div class="color" style="margin-left: 10px;">
+    <label for="pen-color">Color</label>
+    <input type="color" style="font-size: 20px;" id="pen-color" value="#000">
+  </div>
+  <div class="actions" style="margin-left: 10px;">
+    <button id="reset-canvas">Reset</button>
+    <a id="save-canvas">Save</a>
+  </div>
+</div>
+
+
+</body>
+</html>

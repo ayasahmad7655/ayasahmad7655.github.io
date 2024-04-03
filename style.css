@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  background-color: blanchedalmond;
+  text-align: center;
+  font-size: xx-larger;
+  height: 20%;
+  width: auto;
+}
+h1{
+  
+  color:rgb(26, 93, 151);
+  font-family: 'Festive', cursive;
+  
+}
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: relative;
+}
+#canvas{
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+  cursor: crosshair;
+  position: fixed;
+}
+.control{
+
+  position: absolute;
+   left: 10px; 
+  top: 50px; 
+  background-color:lightseagreen;
+  border-radius: 15px;
+}
+.color-field{
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  margin: 2px;
+  border: 2px solid black;
+  padding-left: 20px;
+}
+.size{
+  margin: 10px 0px;
+  padding-top: 10px 0px;
+}
+.actions{
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+#reset-canvas,save-canvas{
+  margin-right: 10px;
+}
+.color{
+  margin-top: 10px;
+}
+.col{
+  border: lightblue;
+  border-radius: 10px;
+  background-color: lightgreen;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding:5px 0px 5px 20px;
+}
+.but{
+  font-size:10px;
+  background-color: lightslategrey;
+  border-radius: 7px;
+}
+#line{
+  background-color: lightslategrey;
+  border-radius: 5px;
+  width: auto;
+}
+#save-canvas{
+  color: blue;
+  background-color: white;
+  padding: 1px;
+  text-decoration: none;
+}
